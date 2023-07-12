@@ -1,7 +1,7 @@
 // import { validationResult } from "express-validator";
 import Color from "../models/color";
 
-export const obtenercolores = async (req, res) => {
+export const obtenerColores = async (req, res) => {
   try {
     const colores = await Color.find(); // trae la coleccion de productos (lista de productos)
     res.status(200).json(colores);
@@ -42,7 +42,7 @@ export const crearColor = async (req, res) => {
   }
 };
 
-export const borrarTarea = async (req, res) => {
+export const borrarColor = async (req, res) => {
   try {
     await Color.findByIdAndDelete(req.params.id);
     res.status(200).json({

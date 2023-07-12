@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 
 const colorSchema = new Schema({
-    tarea: {
+    color: {
         type: String,
         minLength: 2,
         maxLength: 150,

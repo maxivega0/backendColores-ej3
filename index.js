@@ -4,7 +4,7 @@ import morgan from 'morgan';
 import path from "path"
 import 'dotenv/config'
 import './src/database/dbConnection'
-// import coloresRouter from './src/routes/tareas.routes'
+import coloresRouter from './src/routes/colores.routes'
 
 const app = express();
 
@@ -22,4 +22,4 @@ app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname, '/public')))
 
 
-// app.use('/apicolores', coloresRouter)
+app.use('/apicolores', coloresRouter)
