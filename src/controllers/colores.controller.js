@@ -1,9 +1,8 @@
-// import { validationResult } from "express-validator";
 import Color from "../models/color";
 
 export const obtenerColores = async (req, res) => {
   try {
-    const colores = await Color.find(); // trae la coleccion de productos (lista de productos)
+    const colores = await Color.find(); 
     res.status(200).json(colores);
   } catch (error) {
     console.log(error);
@@ -29,7 +28,7 @@ export const obtenerColorID = async (req, res) => {
 export const crearColor = async (req, res) => {
   try {
     console.log(req.body);
-    const colorNuevo = new Color(req.body); // Producto es un modelo
+    const colorNuevo = new Color(req.body);
     await colorNuevo.save();
     res.status(201).json({
       mensaje: "El color se creo correctamente",
@@ -57,7 +56,7 @@ export const borrarColor = async (req, res) => {
 };
 export const editarColor = async (req, res) => {
   try {
-    await Color.findByIdAndUpdate(req.params.id, req.body); //en el primer parametro recibimos el id y lo cambiamos por los datos del body
+    await Color.findByIdAndUpdate(req.params.id, req.body);
     res.status(200).json({
       mensaje: "El Color fue editado correctamente",
     });
